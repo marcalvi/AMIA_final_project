@@ -1,10 +1,9 @@
 name: AMIA_5090
 channels:
+  - http://repo.radiomics.vhio.net:9999/conda/conda-forge
   - pytorch
   - nvidia
-  - http://repo.radiomics.vhio.net:9999/conda/conda-forge
   - defaults
-  - conda-forge
 dependencies:
   - python=3.10
   - pip
@@ -24,7 +23,9 @@ dependencies:
   - pip:
       # VHIO RTX 5090 setup: use the same PyTorch CUDA wheel index pattern
       # as the internal cluster environment examples.
+      - --index-url http://repo.radiomics.vhio.net:9999/simple/
       - --extra-index-url https://download.pytorch.org/whl/cu130
+      - numpy==1.26.4
       - torch
       - torchvision
       - ultralytics-opencv-headless
@@ -32,7 +33,7 @@ dependencies:
       - torchmetrics
       - faster-coco-eval
       - pycocotools
-      - opencv-python-headless
+      - opencv-python-headless==4.10.0.84
       - kaggle
       - pydicom
       - tensorboard
