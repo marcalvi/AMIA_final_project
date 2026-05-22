@@ -1,0 +1,57 @@
+#!/bin/bash
+
+set -euo pipefail
+
+echo "=== AMIA notebook session ==="
+date
+echo "PROJECT_ROOT: ${PROJECT_ROOT}"
+echo "DATA_ROOT: ${DATA_ROOT}"
+echo "CONDA_ENV: ${CONDA_ENV}"
+echo "JUPYTER_PASSWORD: ${JUPYTER_PASSWORD}"
+echo "PUBLIC_KEY: ${PUBLIC_KEY}"
+echo
+
+echo "=== GPU ==="
+nvidia-smi || true
+echo
+
+echo "=== Conda ==="
+source /home/osiris-user/anaconda3/etc/profile.d/conda.sh
+conda activate "${CONDA_ENV}"
+
+python - <<'PY'
+import torch
+print("torch", torch.__version__)
+print("cuda available", torch.cuda.is_available())
+print("cuda runtime", torch.version.cuda)
+print("gpu", torch.cuda.get_device_name(0) if torch.cuda.is_available() else "none")
+PY
+
+python -m ipykernel install --user --name "${KERNEL_NAME}" --display-name "${KERNEL_DISPLAY_NAME}" || true
+
+cd "${PROJECT_ROOT}"
+
+echo
+echo "=== Project files ==="
+pwd
+ls -lah
+echo
+
+if [[ ! -d "${DATA_ROOT}" ]]; then
+  echo "WARNING: DATA_ROOT does not exist: ${DATA_ROOT}" >&2
+  echo "Update DATA_ROOT in nootebok/example.yaml before running the notebook." >&2
+fi
+
+export AMIA_PROJECT_DIR="${AMIA_PROJECT_DIR:-${PROJECT_ROOT}}"
+export AMIA_BASE_DIR="${AMIA_BASE_DIR:-${DATA_ROOT}}"
+export AMIA_RUN_TRAINING="${AMIA_RUN_TRAINING:-true}"
+export AMIA_RUN_GRID_SEARCH="${AMIA_RUN_GRID_SEARCH:-true}"
+export AMIA_SKIP_FINISHED_RUNS="${AMIA_SKIP_FINISHED_RUNS:-true}"
+export AMIA_YOLO_GRID_EPOCHS="${AMIA_YOLO_GRID_EPOCHS:-25}"
+export AMIA_RTDETR_GRID_EPOCHS="${AMIA_RTDETR_GRID_EPOCHS:-20}"
+export AMIA_FASTER_RCNN_GRID_EPOCHS="${AMIA_FASTER_RCNN_GRID_EPOCHS:-7}"
+export AMIA_EVAL_IOU_THRESHOLD="${AMIA_EVAL_IOU_THRESHOLD:-0.4}"
+export AMIA_SUBMISSION_CONF="${AMIA_SUBMISSION_CONF:-0.25}"
+
+echo "=== Starting VHIO notebook services ==="
+. /start.sh

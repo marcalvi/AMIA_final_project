@@ -1,0 +1,30 @@
+description: 'AMIA Challenge 3 notebook session on RTX 5090'
+executable: /bin/bash
+args: ["-c", "/home/osiris-user/Desktop/AMIA_final_project/nootebok/file.sh"]
+worker_type: 5090
+use_gpu: true
+max_cpus: 31
+max_memory_mb: 110000
+docker_image: harbor.vhio.net/geb-env-gpu:0.1.3
+openports:
+    - external: 9999
+      internal: 22
+    - external: 8888
+      internal: 8888
+env:
+  PROJECT_ROOT: /home/osiris-user/Desktop/AMIA_final_project
+  DATA_ROOT: /nfs/rnas/projects/AMIA/challenge_dataset
+  CONDA_ENV: AMIA_5090
+  KERNEL_NAME: AMIA_5090
+  KERNEL_DISPLAY_NAME: AMIA 5090
+  JUPYTER_PASSWORD: password123
+  PUBLIC_KEY: password123
+  AMIA_RUN_TRAINING: 'true'
+  AMIA_RUN_GRID_SEARCH: 'true'
+  AMIA_SKIP_FINISHED_RUNS: 'true'
+  AMIA_YOLO_GRID_EPOCHS: '25'
+  AMIA_RTDETR_GRID_EPOCHS: '20'
+  AMIA_FASTER_RCNN_GRID_EPOCHS: '7'
+  AMIA_EVAL_IOU_THRESHOLD: '0.4'
+  AMIA_SUBMISSION_CONF: '0.25'
+max_runtime_minutes: 1440

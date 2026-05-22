@@ -1,0 +1,33 @@
+description: 'AMIA Challenge 3 grid search and Kaggle submission'
+executable: /bin/bash
+args:
+  - -lc
+  - |
+    set -euo pipefail
+    cd "${PROJECT_ROOT}"
+    bash ./run_AMIA_challenge3.sh
+env:
+  # Change these two paths to the actual VHIO locations before submitting.
+  PROJECT_ROOT: /home/osiris-user/Desktop/AMIA_final_project
+  DATA_ROOT: /nfs/rnas/projects/AMIA/challenge_dataset
+
+  CONDA_ENV: AMIA_5090
+  KERNEL_NAME: AMIA_5090
+  NOTEBOOK: AMIA_Albesa-Fite-Juan_part3.ipynb
+
+  AMIA_RUN_TRAINING: 'true'
+  AMIA_RUN_GRID_SEARCH: 'true'
+  AMIA_SKIP_FINISHED_RUNS: 'true'
+  AMIA_YOLO_GRID_EPOCHS: '25'
+  AMIA_RTDETR_GRID_EPOCHS: '20'
+  AMIA_FASTER_RCNN_GRID_EPOCHS: '7'
+  AMIA_EVAL_IOU_THRESHOLD: '0.4'
+  AMIA_SUBMISSION_CONF: '0.25'
+worker_type: '5090'
+use_gpu: true
+max_cpus: 31
+max_memory_mb: 110000
+docker_image: harbor.vhio.net/geb-env-gpu:0.1.3
+mounts: []
+max_runtime_minutes: 1440
+open_ports: []
