@@ -15,16 +15,11 @@ dependencies:
   - pandas>=1.5.0
   - scipy>=1.10.0
   - scikit-learn>=1.2.0
-  - scikit-image>=0.21.0
   - matplotlib>=3.7.0
-  - seaborn>=0.12.0
-  - plotly>=5.15.0
-  - pillow>=9.5.0
   - tqdm>=4.65.0
   - pyyaml>=6.0
   - nbformat>=5.8.0
   - nbconvert>=7.0.0
-  - ipywidgets
   - tensorboard>=2.13.0
   - pip:
       # VHIO RTX 5090 setup: use the same PyTorch CUDA wheel index pattern
@@ -42,3 +37,8 @@ dependencies:
       - kaggle
       - pydicom
       - tensorboard
+      - seaborn>=0.12.0
+      - plotly>=5.15.0
+      - pillow>=9.5.0
+      - scikit-image>=0.21.0
+      - ipywidgets
