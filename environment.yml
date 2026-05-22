@@ -27,7 +27,6 @@ dependencies:
       - --extra-index-url https://download.pytorch.org/whl/cu130
       - torch
       - torchvision
-      - torchaudio
       - ultralytics-opencv-headless
       - ensemble-boxes
       - torchmetrics
@@ -40,5 +39,4 @@ dependencies:
       - seaborn>=0.12.0
       - plotly>=5.15.0
       - pillow>=9.5.0
-      - scikit-image>=0.21.0
       - ipywidgets
