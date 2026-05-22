@@ -1,0 +1,5 @@
+path: /data/mhedas/common/jjuan/AMIA/yolo_baseline/yolo_dataset
+train: images/train
+val: images/val
+names:
+  0: Atelectasis

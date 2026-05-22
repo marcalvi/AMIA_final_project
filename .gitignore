@@ -1,0 +1,11 @@
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.zip
+yolo_baseline/yolo_dataset/
+runs/
+yolo_baseline/*/weights/
