@@ -13,6 +13,7 @@ CONDA_ENV="${CONDA_ENV:-AMIA_5090}"
 NOTEBOOK="${NOTEBOOK:-AMIA_Albesa-Fite-Juan_part3.ipynb}"
 DATA_ROOT="${DATA_ROOT:-/home/osiris-user/Desktop/amia_project/dataset/challenge_dataset}"
 KERNEL_NAME="${KERNEL_NAME:-AMIA_5090}"
+KERNEL_DISPLAY_NAME="${KERNEL_DISPLAY_NAME:-AMIA 5090}"
 
 export AMIA_PROJECT_DIR="${AMIA_PROJECT_DIR:-${PROJECT_ROOT}}"
 export AMIA_BASE_DIR="${AMIA_BASE_DIR:-${DATA_ROOT}}"
@@ -48,6 +49,7 @@ print("cuda available", torch.cuda.is_available())
 print("cuda runtime", torch.version.cuda)
 print("gpu", torch.cuda.get_device_name(0) if torch.cuda.is_available() else "none")
 PY
+python -m ipykernel install --user --name "${KERNEL_NAME}" --display-name "${KERNEL_DISPLAY_NAME}" || true
 echo
 
 cd "${PROJECT_ROOT}"
