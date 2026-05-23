@@ -1,6 +1,6 @@
 description: 'AMIA Challenge 3 notebook session on RTX 5090'
 executable: /bin/bash
-args: ["-c", "/home/osiris-user/Desktop/AMIA_final_project/nootebok/file.sh"]
+args: ["-c", "/home/osiris-user/Desktop/amia_project/AMIA_final_project/nootebok/file.sh"]
 worker_type: 5090
 use_gpu: true
 max_cpus: 31
@@ -12,7 +12,7 @@ openports:
     - external: 8888
       internal: 8888
 env:
-  PROJECT_ROOT: /home/osiris-user/Desktop/AMIA_final_project
+  PROJECT_ROOT: /home/osiris-user/Desktop/amia_project/AMIA_final_project
   DATA_ROOT: /home/osiris-user/Desktop/amia_project/dataset/challenge_dataset
   CONDA_ENV: AMIA_5090
   KERNEL_NAME: AMIA_5090

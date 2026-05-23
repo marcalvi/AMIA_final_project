@@ -40,7 +40,7 @@ openports:
     - external: 8888
       internal: 8888
 env:
-  PROJECT_ROOT: /home/osiris-user/Desktop/AMIA_final_project
+  PROJECT_ROOT: /home/osiris-user/Desktop/amia_project/AMIA_final_project
   DATA_ROOT: /home/osiris-user/Desktop/amia_project/dataset/challenge_dataset
   CONDA_ENV: AMIA_5090
   KERNEL_NAME: AMIA_5090

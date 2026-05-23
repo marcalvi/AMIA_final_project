@@ -5,10 +5,10 @@ args:
   - |
     set -euo pipefail
     cd "${PROJECT_ROOT}"
-    bash ./run_AMIA_challenge3.sh
+    bash "${PROJECT_ROOT}/run_AMIA_challenge3.sh"
 env:
   # Change these two paths to the actual VHIO locations before submitting.
-  PROJECT_ROOT: /home/osiris-user/Desktop/AMIA_final_project
+  PROJECT_ROOT: /home/osiris-user/Desktop/amia_project/AMIA_final_project
   DATA_ROOT: /home/osiris-user/Desktop/amia_project/dataset/challenge_dataset
 
   CONDA_ENV: AMIA_5090
