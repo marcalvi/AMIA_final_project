@@ -11,7 +11,7 @@ set -euo pipefail
 PROJECT_ROOT="${PROJECT_ROOT:-/home/osiris-user/Desktop/AMIA_final_project}"
 CONDA_ENV="${CONDA_ENV:-AMIA_5090}"
 NOTEBOOK="${NOTEBOOK:-AMIA_Albesa-Fite-Juan_part3.ipynb}"
-DATA_ROOT="${DATA_ROOT:-/nfs/rnas/projects/AMIA/challenge_dataset}"
+DATA_ROOT="${DATA_ROOT:-/home/osiris-user/Desktop/amia_project/dataset/challenge_dataset}"
 KERNEL_NAME="${KERNEL_NAME:-AMIA_5090}"
 
 export AMIA_PROJECT_DIR="${AMIA_PROJECT_DIR:-${PROJECT_ROOT}}"
