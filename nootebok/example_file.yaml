@@ -14,6 +14,7 @@ openports:
 env:
   PROJECT_ROOT: /home/osiris-user/Desktop/amia_project/AMIA_final_project
   DATA_ROOT: /home/osiris-user/Desktop/amia_project/dataset/challenge_dataset
+  AMIA_WORKSPACE_DIR: /home/osiris-user/Desktop/amia_project/AMIA_final_project/challenge3_outputs
   CONDA_ENV: AMIA_5090
   KERNEL_NAME: AMIA_5090
   KERNEL_DISPLAY_NAME: AMIA 5090

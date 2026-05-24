@@ -42,8 +42,9 @@ if [[ ! -d "${DATA_ROOT}" ]]; then
   echo "Update DATA_ROOT in nootebok/example.yaml before running the notebook." >&2
 fi
 
-export AMIA_PROJECT_DIR="${AMIA_PROJECT_DIR:-${PROJECT_ROOT}}"
-export AMIA_BASE_DIR="${AMIA_BASE_DIR:-${DATA_ROOT}}"
+export AMIA_PROJECT_DIR="${PROJECT_ROOT}"
+export AMIA_BASE_DIR="${DATA_ROOT}"
+export AMIA_WORKSPACE_DIR="${PROJECT_ROOT}/challenge3_outputs"
 export AMIA_RUN_TRAINING="${AMIA_RUN_TRAINING:-true}"
 export AMIA_RUN_GRID_SEARCH="${AMIA_RUN_GRID_SEARCH:-true}"
 export AMIA_SKIP_FINISHED_RUNS="${AMIA_SKIP_FINISHED_RUNS:-false}"
