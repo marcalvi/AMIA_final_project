@@ -8,5 +8,7 @@ __pycache__/
 *.zip
 yolo_baseline/yolo_dataset/
 challenge3_outputs/
+challenge3_outputs_pic/
+challenge3_outputs_final/
 runs/
 yolo_baseline/*/weights/
